@@ -9,7 +9,7 @@ import ru.yandex.qatools.allure.annotations.Step;
 /**
  * Created by coder on 17.03.16.
  */
-public class AccountPage extends PermanentUI {
+public class AccountPage extends UniversalPage {
     @FindBy(how = How.XPATH, using = ".//*[@id='page-7']/div[2]/div[1]/div[1]")
     private SelenideElement successLoginMessage;
 

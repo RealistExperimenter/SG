@@ -1,10 +1,7 @@
 package com.samgurman.tests;
 
 
-import com.samgurman.pages.AccountPage;
-import com.samgurman.pages.LoginRegisterPage;
-import com.samgurman.pages.MainPage;
-import com.samgurman.pages.PermanentUI;
+import com.samgurman.pages.*;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -16,12 +13,13 @@ import ru.yandex.qatools.allure.model.Failure;
 import ru.yandex.qatools.allure.model.SeverityLevel;
 
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.page;
 
 /**
  * Created by coder on 16.03.16.
  */
 public class LoginTest {
-    private PermanentUI mainPage;
+    private UniversalPage mainPage;
     LoginRegisterPage loginPage;
 
     @BeforeTest
@@ -37,6 +35,8 @@ public class LoginTest {
         String username="gelezo.refresh@gmail.com";
 
         loginPage=mainPage.goToLoginPage();
+
+            MainPage main = (MainPage)mainPage.goToMainPage();
 
 
         loginPage.clickOnAuthorisationButton();
@@ -77,10 +77,6 @@ public class LoginTest {
             Assert.assertTrue(false,"Break test:Cant logging with user");
         }
         accountPage.checkSuccessMessage("Вы вошли как gelezo.refresh");
-
-
     }
-
-
 
 }

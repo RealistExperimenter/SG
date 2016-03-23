@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.page;
 /**
  * Created by coder on 17.03.16.
  */
-public class LoginRegisterPage extends PermanentUI {
+public class LoginRegisterPage extends UniversalPage {
 
     private String uri="my-account/";
 
